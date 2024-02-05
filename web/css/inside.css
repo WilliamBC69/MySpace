@@ -1,6 +1,6 @@
 body {
   background: linear-gradient(#36c8f4, #6b55b3);
-  background-size: 100vw 100vh;
+  background-attachment: scroll;
 }
 
 .topMenu {
@@ -20,7 +20,7 @@ body {
   align-items: end;
 }
 
-.post{
+.post {
   display: inline-block;
   background-color: aliceblue;
   margin-top: 4px;
