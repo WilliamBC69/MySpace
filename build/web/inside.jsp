@@ -41,13 +41,18 @@
         <input type="submit" value="Post" />
       </form>
 
-      <c:if test="${empty posts}"><!--if theres no post-->
-        <p>No posts to display.</p>
-      </c:if>
-      <c:forEach var="post" items="${posts}"><!--print out all posts in the list-->
-        <p>${post.content}</p>
-        <p>Posted on: ${post.date}</p>
-      </c:forEach>
+      <div>
+        <c:if test="${empty posts}"><!--if theres no post-->
+          <p>No posts to display.</p>
+        </c:if>
+        <c:forEach var="post" items="${posts}"><!--print out all posts in the list-->
+          <div class="post">
+              <p>${post.content}</p>
+              <p>Posted on: ${post.date}</p>
+          </div>
+          <br>
+        </c:forEach>
+      </div>
 
     </div>
   </body>
