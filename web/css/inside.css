@@ -1,0 +1,12 @@
+body {
+  background: linear-gradient(#36c8f4, #6b55b3);
+  background-size: 100vw 100vh;
+}
+.topMenu{
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+}
+.menu{
+  margin-top: 20px;
+}
