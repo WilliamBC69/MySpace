@@ -73,7 +73,7 @@ public class newFriend extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         String searchuser = request.getParameter("searchuser");
-        Connection connection;
+        Connection connection = null;
         try {
             HttpSession session = request.getSession();
             String username = (String) session.getAttribute("username");

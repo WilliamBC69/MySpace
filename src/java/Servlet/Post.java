@@ -80,7 +80,7 @@ public class Post extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        Connection connection;
+        Connection connection=null;
 
         try {
             HttpSession session = request.getSession();

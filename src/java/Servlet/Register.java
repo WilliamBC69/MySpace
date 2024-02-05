@@ -83,7 +83,7 @@ public class Register extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        Connection con;
+        Connection con=null;
 
         try {
             con = Connecting.getConnection();

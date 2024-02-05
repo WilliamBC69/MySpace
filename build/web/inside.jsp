@@ -15,17 +15,22 @@
         <h1 style="margin-right: 20px">${username}</h1>
 
         <div class="menu">
-          <form action="newFriend" method="get" style="margin-right: 5px">
-            <input type="text" id="searchuser" name="searchuser" placeholder="Search by name" required />
-            <input type="submit" style="width: 20px; height: 22px" />
-          </form>
 
-          <form action="Friend" method="get" style="margin-right: 5px">
-            <!--go to friend list-->
-            <input type="submit" value="Friend" />
-          </form>
+          <div>
+            <form action="newFriend" method="get" style="margin-right: 5px">
+              <input type="text" id="searchuser" name="searchuser" placeholder="Search by name" required />
+              <input type="submit" style="width: 20px; height: 22px" />
+            </form>
+          </div>
 
-          <button onclick="window.location.href='index.jsp'">Logout</button>
+          <div>
+            <form action="Friend" method="get" style="margin-right: 5px">
+              <!--go to friend list-->
+              <input type="submit" value="Friend" />
+            </form>
+          </div>
+
+          <div><button onclick="window.location.href='index.jsp'">Logout</button></div>
         </div>
       </div>
 
