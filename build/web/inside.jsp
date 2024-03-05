@@ -6,34 +6,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inside</title>
-    <link rel="stylesheet" href="css/inside.css" />
   </head>
 
   <body>
     <div class="everything">
-      <div class="topMenu">
+      <div style="display: flex; align-items: center">
         <h1 style="margin-right: 20px">${username}</h1>
 
-        <div class="menu">
-
-          <div>
-            <form action="newFriend" method="get" style="margin-right: 5px">
-              <input type="text" id="searchuser" name="searchuser" placeholder="Search by name" required />
-              <input type="submit" style="width: 20px; height: 22px" />
-            </form>
-          </div>
-
-          <div>
-            <form action="Friend" method="get" style="margin-right: 5px">
-              <!--go to friend list-->
-              <input type="submit" value="Friend" />
-            </form>
-          </div>
-
-          <div><button onclick="window.location.href='index.jsp'">Logout</button></div>
-        </div>
+        <jsp:include page="nav.jsp"/>
       </div>
-
       <form class="posting" action="Post" method="post">
         <!--make a new post-->
         <textarea name="content" placeholder="What's on your mind?" style="width: 20%; height: 100px; resize:none"
@@ -54,7 +35,6 @@
         </c:forEach>
       </div>
 
-    </div>
   </body>
 
   </html>

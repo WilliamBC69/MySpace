@@ -72,11 +72,19 @@ public class newFriend extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        String searchuser = request.getParameter("searchuser");
+        HttpSession session = request.getSession();
+        String source = request.getParameter("source");
+        String searchuser;
+        if ("addFriend".equals(source)) {
+            searchuser = (String)session.getAttribute("searchuser");
+        } else {
+            searchuser = request.getParameter("searchuser");
+        }
         Connection connection = null;
+
+        String username = (String) session.getAttribute("username");
+        session.setAttribute("searchuser", searchuser);
         try {
-            HttpSession session = request.getSession();
-            String username = (String) session.getAttribute("username");
 
             connection = Connecting.getConnection();
             PreparedStatement userStmt = connection.prepareStatement(
@@ -96,21 +104,22 @@ public class newFriend extends HttpServlet {
             Collections.reverse(newfriends);
             request.setAttribute("newfriends", newfriends);
 
-            RequestDispatcher dispatcher = request.getRequestDispatcher("newfriend.jsp");// send list and user to friend.jsp
+            RequestDispatcher dispatcher = request.getRequestDispatcher("newfriend.jsp");// send list and user to
+                                                                                         // friend.jsp
             dispatcher.forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();
             out.println("<h1>Error occurred: " + e.getMessage() + "</h1>");
-        }finally {
-    if (connection != null) {
-        try {
-            connection.close();
-        } catch (SQLException ex) {
-            // handle any errors
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException ex) {
+                    // handle any errors
+                }
+            }
         }
-    }
-}
     }
 
     /**

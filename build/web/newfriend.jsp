@@ -13,22 +13,12 @@
       <div style="display: flex; align-items: center">
         <h1 style="margin-right: 20px">${username}</h1>
 
-        <form action="newFriend" method="get" style="margin-right: 5px">
-          <!--go to friend list-->
-          <input type="text" id="searchuser" name="searchuser" placeholder="Search by name" required />
-          <input type="submit" style="width: 20px; height: 22px" />
-        </form>
-        
-        <button onclick="window.location.href='Inside'" style="margin-right: 5px">
-          Go back
-        </button>
-        <button onclick="window.location.href='index.jsp'">Logout</button>
+        <jsp:include page="nav.jsp"/>
       </div>
-
       <h2>New Friends</h2>
       <c:if test="${empty newfriends}">
         <!--if theres no friend-->
-        <p>No friends to display.</p>
+        <p>No potential friends.</p>
       </c:if>
       <c:forEach var="newfriend" items="${newfriends}">
         <p>${newfriend.newfriendname}</p>

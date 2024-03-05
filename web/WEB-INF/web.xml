@@ -36,6 +36,10 @@
         <servlet-name>Addfriend</servlet-name>
         <servlet-class>Servlet.Addfriend</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Message</servlet-name>
+        <servlet-class>Servlet.Message</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -71,5 +75,9 @@
     <servlet-mapping>
         <servlet-name>Addfriend</servlet-name>
         <url-pattern>/Addfriend</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Message</servlet-name>
+        <url-pattern>/Message</url-pattern>
     </servlet-mapping>
 </web-app>

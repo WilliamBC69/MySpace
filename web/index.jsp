@@ -19,7 +19,7 @@
       <br><br>
       <input type="password" id="password" name="password" class="password" placeholder="Password" required />
       <c:if test="${not empty LoginError}">
-        <p class="error">${LoginError}</p>
+        <a class="error">${LoginError}</a>
       </c:if>
       <input type="submit" name="action" class="login" value="Login">
     </form>

@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import Connect.Connecting;
@@ -79,19 +80,37 @@ public class Addfriend extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        Connection con=null;
+        Connection con = null;
 
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         String friendname = request.getParameter("friendname");
         try {
             con = Connecting.getConnection();
+
             PreparedStatement stm = con.prepareStatement(
-                    "INSERT INTO Friends (userid1, userid2) VALUES ((SELECT userid FROM Users WHERE username=?), (SELECT userid FROM Users WHERE username=?))");
+                    "SELECT userid FROM Users WHERE username=?");
             stm.setString(1, username);
-            stm.setString(2, friendname);
+            ResultSet rs = stm.executeQuery();
+            rs.next();
+            int userid1 = rs.getInt(1);
+            stm.setString(1, friendname);
+            rs = stm.executeQuery();
+            rs.next();
+            int userid2 = rs.getInt(1);
+
+            if (userid1 > userid2) {
+                int temp = userid1;
+                userid1 = userid2;
+                userid2 = temp;
+            }
+
+            stm = con.prepareStatement(
+                    "INSERT INTO Friends (userid1, userid2) VALUES (?, ?)");
+            stm.setInt(1, userid1);
+            stm.setInt(2, userid2);
             stm.executeUpdate();
-            response.sendRedirect("newFriend");
+            response.sendRedirect("newFriend?source=addFriend");
         } catch (Exception e) {
             out.println("<h1>no</h1>");
         } finally {
