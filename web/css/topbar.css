@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+  }
+  .topbar {
+    align-items: center;
+    background-color: rgba(226, 231, 235, 0.3); 
+  }
+  
+  .topbar h1 {
+    margin-right: auto;
+    margin-left: 10px;
+    color: #2a2929;
+    background: linear-gradient(to right, #6a82fb, #f9fe67);
+    padding: 10px; /* Adjust as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; 
+  }
+  
+  .topbar .nav {
+    margin-left: 10px;
+  }
+  

@@ -82,11 +82,12 @@ public class Register extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        request.setAttribute("currentTimeMillis", System.currentTimeMillis());
         PrintWriter out = response.getWriter();
         Connection con=null;
 
         try {
-            con = Connecting.getConnection();
+            con = Connect.getConnection();
 
             String username = request.getParameter("username");
             String password = request.getParameter("password");

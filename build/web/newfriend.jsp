@@ -6,27 +6,34 @@
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>New Friends</title>
+      <title>${username}'s Potential Friends</title>
+      <link rel="stylesheet" href="./css/newfriend.css?${currentTimeMillis}">
+
     </head>
 
     <body>
-      <div style="display: flex; align-items: center">
-        <h1 style="margin-right: 20px">${username}</h1>
-
-        <jsp:include page="nav.jsp"/>
+      <div class="topbar">
+        <h1>${username}</h1>
+        <div class="nav">
+          <jsp:include page="nav.jsp"/>
+        </div>
       </div>
       <h2>New Friends</h2>
-      <c:if test="${empty newfriends}">
-        <!--if theres no friend-->
-        <p>No potential friends.</p>
-      </c:if>
-      <c:forEach var="newfriend" items="${newfriends}">
-        <p>${newfriend.newfriendname}</p>
-        <form action="Addfriend" method="post">
-          <input type="hidden" name="friendname" value="${newfriend.newfriendname}" />
-          <input type="submit" value="Add Friend" />
-        </form>
-      </c:forEach>
+      <div class="displayNewFriend">
+        <c:if test="${empty newfriends}">
+          <!--if theres no friend-->
+          <h3>No potential friends.</h3>
+        </c:if>
+        <c:forEach var="newfriend" items="${newfriends}">
+          <div class="displayNewFriend">
+            <p>${newfriend.newfriendname}</p>
+            <form action="Addfriend" method="post">
+              <input type="hidden" name="friendname" value="${newfriend.newfriendname}" />
+              <input type="submit" value="Add Friend" />
+            </form>
+          </div>
+        </c:forEach>
+      </div>
     </body>
 
     </html>

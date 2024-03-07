@@ -11,7 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import Connect.Connecting;
+import Connect.*;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -79,6 +79,7 @@ public class Addfriend extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        request.setAttribute("currentTimeMillis", System.currentTimeMillis());
         PrintWriter out = response.getWriter();
         Connection con = null;
 
@@ -86,7 +87,7 @@ public class Addfriend extends HttpServlet {
         String username = (String) session.getAttribute("username");
         String friendname = request.getParameter("friendname");
         try {
-            con = Connecting.getConnection();
+            con = Connect.getConnection();
 
             PreparedStatement stm = con.prepareStatement(
                     "SELECT userid FROM Users WHERE username=?");

@@ -6,7 +6,10 @@
   <title>Login</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="./css/login.css?${currentTimeMillis}">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 </head>
 
 <body>
@@ -19,7 +22,7 @@
       <br><br>
       <input type="password" id="password" name="password" class="password" placeholder="Password" required />
       <c:if test="${not empty LoginError}">
-        <a class="error">${LoginError}</a>
+        <p class="error">${LoginError}</p>
       </c:if>
       <input type="submit" name="action" class="login" value="Login">
     </form>

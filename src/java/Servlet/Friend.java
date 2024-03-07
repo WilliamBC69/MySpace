@@ -70,6 +70,7 @@ public class Friend extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        request.setAttribute("currentTimeMillis", System.currentTimeMillis());
         PrintWriter out = response.getWriter();
         Connection connection=null;
         try {
@@ -77,7 +78,7 @@ public class Friend extends HttpServlet {
             String username = (String) session.getAttribute("username");
 
             String query = "(SELECT u2.username AS friendname FROM Friends f JOIN Users u1 ON f.userid1 = u1.userid JOIN Users u2 ON f.userid2 = u2.userid WHERE u1.username = ?) UNION (SELECT u1.username AS friendname FROM Friends f JOIN Users u1 ON f.userid1 = u1.userid JOIN Users u2 ON f.userid2 = u2.userid WHERE u2.username = ?)";//get friends id by joining result table where the userid is userid1 and userid is userid2 the get the names of users with that id
-            connection = Connecting.getConnection();
+            connection = Connect.getConnection();
             PreparedStatement userStmt = connection.prepareStatement(query);
             userStmt.setString(1, username);
             userStmt.setString(2, username);

@@ -10,7 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import Connect.Connecting;
+import Connect.*;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -78,6 +78,7 @@ public class Unfriend extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        request.setAttribute("currentTimeMillis", System.currentTimeMillis());
         PrintWriter out = response.getWriter();
 
         HttpSession session = request.getSession();
@@ -88,7 +89,7 @@ public class Unfriend extends HttpServlet {
         Connection con=null;
 
         try {
-            con = Connecting.getConnection();
+            con = Connect.getConnection();
             PreparedStatement stm = con.prepareStatement(
                     "DELETE FROM Friends WHERE (userid1 = (select userid from Users where username=?) AND userid2 = (select userid from Users where username=?)) OR (userid1 = (select userid from Users where username=?) AND userid2 = (select userid from Users where username=?))");
             stm.setString(1, username);

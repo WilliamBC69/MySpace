@@ -71,12 +71,13 @@ public class newFriend extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        request.setAttribute("currentTimeMillis", System.currentTimeMillis());
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         String source = request.getParameter("source");
         String searchuser;
         if ("addFriend".equals(source)) {
-            searchuser = (String)session.getAttribute("searchuser");
+            searchuser = (String) session.getAttribute("searchuser");
         } else {
             searchuser = request.getParameter("searchuser");
         }
@@ -86,12 +87,13 @@ public class newFriend extends HttpServlet {
         session.setAttribute("searchuser", searchuser);
         try {
 
-            connection = Connecting.getConnection();
+            connection = Connect.getConnection();
             PreparedStatement userStmt = connection.prepareStatement(
-                    "SELECT username AS newfriendname FROM Users WHERE username like ? AND userid NOT IN (SELECT userid2 FROM Friends WHERE userid1 = (SELECT userid FROM Users WHERE username = ?) UNION SELECT userid1 FROM Friends WHERE userid2 = (SELECT userid FROM Users WHERE username = ?))");
+                    "SELECT username AS newfriendname FROM Users WHERE username like ? AND userid NOT IN (SELECT userid2 FROM Friends WHERE userid1 = (SELECT userid FROM Users WHERE username = ?) UNION SELECT userid1 FROM Friends WHERE userid2 = (SELECT userid FROM Users WHERE username = ?) UNION SELECT userid FROM Users WHERE userid=(SELECT userid FROM Users WHERE username=?))");
             userStmt.setString(1, "%" + searchuser + "%");
             userStmt.setString(2, username);
             userStmt.setString(3, username);
+            userStmt.setString(4, username);
             ResultSet rs = userStmt.executeQuery();
 
             List<Map<String, Object>> newfriends = new ArrayList<>();// list of potential friends

@@ -79,6 +79,7 @@ public class Post extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        request.setAttribute("currentTimeMillis", System.currentTimeMillis());
         PrintWriter out = response.getWriter();
         Connection connection=null;
 
@@ -89,7 +90,7 @@ public class Post extends HttpServlet {
             String content = request.getParameter("content");
             //insert post into the table
             String query = "INSERT INTO Posts (userid, content, date) VALUES ((SELECT userid FROM Users WHERE username = ?), ?, GETDATE())";
-            connection = Connecting.getConnection();
+            connection = Connect.getConnection();
             PreparedStatement stm = connection.prepareStatement(query);
             stm.setString(1, username);
             stm.setString(2, content);

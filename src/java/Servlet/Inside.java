@@ -67,14 +67,14 @@ public class Inside extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        request.setAttribute("currentTimeMillis", System.currentTimeMillis());
         PrintWriter out = response.getWriter();
         Connection connection=null;
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
         try {
-            HttpSession session = request.getSession();
-            String username = (String) session.getAttribute("username");
-
-            String query = "SELECT * FROM Posts WHERE userid = (SELECT userid FROM Users WHERE username = ?)";//get posts belonging to user
             connection = Connecting.getConnection();
+            String query = "SELECT * FROM Posts WHERE userid = (SELECT userid FROM Users WHERE username = ?)";//get posts belonging to user
             PreparedStatement userStmt = connection.prepareStatement(query);
             userStmt.setString(1, username);
             ResultSet rs = userStmt.executeQuery();

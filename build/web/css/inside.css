@@ -1,0 +1,67 @@
+@import url("common.css");
+@import url("topbar.css");
+
+.post-handle {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.posting {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.posting textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.posting input[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #6a82fb;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.posting input[type="submit"]:hover {
+  background-color: #1e3c72;
+}
+
+.posts {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.posts .post {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.posts h3 {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.posts .post p {
+  margin: 0;
+  line-height: 1.6;
+}
