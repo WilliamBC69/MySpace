@@ -28,7 +28,7 @@
         ><!--print out all friends in the list-->
         <div class="displayFriend">
       
-          <a>${friend.friendname}</a>
+          <a class="friendname">${friend.friendname}</a>
           <div class="unfriend">
             <form action="Unfriend" method="post" style="display: inline;">
               <input type="hidden" name="friendname" value="${friend.friendname}"/>

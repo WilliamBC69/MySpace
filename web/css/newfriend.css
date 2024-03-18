@@ -1,13 +1,23 @@
 @import url("common.css");
 @import url("topbar.css");
-.displayNewFriend {
+
+.displayNewFriendWrapper {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.displayNewFriend {
+  width: 80%;
+  margin:0 auto 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   justify-content: space-between;
   align-items: center;
 }
@@ -15,19 +25,22 @@
 h2 {
   margin-left: 150px;
 }
+
 .displayNewFriend p {
   margin: 0;
   line-height: 1.6;
 }
+
 .displayNewFriend h3 {
   padding: 10px;
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: #f8f9fa; /* Changed to match the top style */
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .displayNewFriend form {
   display: flex;
   align-items: center;
@@ -35,14 +48,14 @@ h2 {
 
 .displayNewFriend input[type="submit"] {
   margin-left: 10px;
-  padding: 10px 20px;
+  padding: 5px 10px; /* Adjusted padding to match the top style */
   background-color: #6a82fb;
   border: none;
-  color: white;
-  cursor: pointer;
   border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
 }
 
 .displayNewFriend input[type="submit"]:hover {
-  background-color: #1e3c72;
+  background-color: #5c72e0; /* Changed to match the top style */
 }

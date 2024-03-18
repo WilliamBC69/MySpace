@@ -107,8 +107,9 @@ public class Likes extends HttpServlet {
             PreparedStatement stm;
             String buttonState;
             stm = connection
-                    .prepareStatement("select * from likes where userid=(select userid from users where username=?)");
+                    .prepareStatement("select * from likes where userid=(select userid from users where username=?) and postid=?");
             stm.setString(1, username);
+            stm.setString(2, postID);
             rs = stm.executeQuery();
             if (rs.next()) {
                 stm = connection.prepareStatement("delete from likes where userid=? and postid=?");

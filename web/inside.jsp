@@ -38,6 +38,7 @@
                   <div class="like-info">
                     <form action="Likes" method="post">
                       <input type="hidden" name="location" value="inside">
+                      <input type="hidden" name="friendname" value="${username}">
                       <input type="hidden" name="postID" value="${post.postID}">
                       <input type="submit" value="Like" style="margin-right: 5px;">
                     </form>

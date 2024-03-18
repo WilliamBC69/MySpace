@@ -77,6 +77,7 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+                System.out.println("asdijasdisajdoaisdjad");
         response.setContentType("text/html");
         request.setAttribute("currentTimeMillis", System.currentTimeMillis());
         PrintWriter out = response.getWriter();
