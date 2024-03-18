@@ -88,12 +88,13 @@ public class Post extends HttpServlet {
             String username = (String) session.getAttribute("username");//get the username saved in the session
 
             String content = request.getParameter("content");
+            String contentWithLineBreaks = content.replace("\n", "<br>");
             //insert post into the table
             String query = "INSERT INTO Posts (userid, content, date) VALUES ((SELECT userid FROM Users WHERE username = ?), ?, GETDATE())";
             connection = Connect.getConnection();
             PreparedStatement stm = connection.prepareStatement(query);
             stm.setString(1, username);
-            stm.setString(2, content);
+            stm.setString(2, contentWithLineBreaks);
             stm.executeUpdate();
             response.sendRedirect("Inside");//take user to inside servlet to update the list of posts
         } catch (Exception e) {

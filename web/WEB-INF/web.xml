@@ -44,6 +44,14 @@
         <servlet-name>viewProfile</servlet-name>
         <servlet-class>Servlet.viewProfile</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Like</servlet-name>
+        <servlet-class>Servlet.Like</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Likes</servlet-name>
+        <servlet-class>Servlet.Likes</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -87,5 +95,13 @@
     <servlet-mapping>
         <servlet-name>viewProfile</servlet-name>
         <url-pattern>/viewProfile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Like</servlet-name>
+        <url-pattern>/Like</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Likes</servlet-name>
+        <url-pattern>/Likes</url-pattern>
     </servlet-mapping>
 </web-app>

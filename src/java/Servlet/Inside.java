@@ -73,7 +73,7 @@ public class Inside extends HttpServlet {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
         try {
-            connection = Connecting.getConnection();
+            connection = Connect.getConnection();
             String query = "SELECT * FROM Posts WHERE userid = (SELECT userid FROM Users WHERE username = ?)";//get posts belonging to user
             PreparedStatement userStmt = connection.prepareStatement(query);
             userStmt.setString(1, username);
@@ -82,14 +82,24 @@ public class Inside extends HttpServlet {
             List<Map<String, Object>> posts = new ArrayList<>();//make a list of posts
             while (rs.next()) {
                 Map<String, Object> post = new HashMap<>();//make map to represent post
+                post.put("postID",rs.getInt("postid"));
                 post.put("content", rs.getString("content"));
                 post.put("date", rs.getDate("date"));
+                PreparedStatement likeStatement=connection.prepareStatement("Select count(*) as likeNum from likes where postid=?");
+                likeStatement.setInt(1, rs.getInt("postid"));
+                ResultSet rsl=likeStatement.executeQuery();
+                if(rsl.next()){
+                    post.put("likes",rsl.getInt("likeNum"));
+                }else{
+                    post.put("likes",0);
+                }
                 posts.add(post);
             }
 
             Collections.reverse(posts);//reverse to print old to new
 
             request.setAttribute("posts", posts);//include the list into request
+            request.setAttribute("buttonState",request.getParameter("buttonState"));
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("inside.jsp");//send the user and the list to inside.jsp
             dispatcher.forward(request, response);

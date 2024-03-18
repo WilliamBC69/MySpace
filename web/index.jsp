@@ -24,13 +24,13 @@
       <c:if test="${not empty LoginError}">
         <p class="error">${LoginError}</p>
       </c:if>
-      <input type="submit" name="action" class="login" value="Login">
+      <input type="submit" name="action" class="choice1" value="Login">
     </form>
 
     <br />
     
     <form action="register.jsp" method="post"><!--take user to register-->
-      <input type="submit" name="action" class="register" value="Register" />
+      <input type="submit" name="action" class="choice2" value="Register" />
     </form>
   </div>
 </body>

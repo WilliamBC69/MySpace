@@ -1,13 +1,5 @@
-@import url('access.css');
+@import url("access.css");
 
-.back,
-.register {
-  font-family: Helvetica;
-  width: 170px;
-  border: 1px;
-  border-radius: 5%;
-  background: linear-gradient(50deg, #14FFEC, #ff8000);
-}
 
 .error,
 .success {

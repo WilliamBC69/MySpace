@@ -36,11 +36,11 @@
             </c:if>
           </c:otherwise>
         </c:choose>
-        <input type="submit" class="register" value="Register" />
+        <input type="submit" class="choice1" value="Register" />
       </form>
 
       <br />
-      <button class="back" onclick="window.location.href='index.jsp'">
+      <button class="choice2" onclick="window.location.href='index.jsp'">
         Go back</button><!--take user back to login page-->
     </div>
   </body>

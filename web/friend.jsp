@@ -16,8 +16,8 @@
       </div>
     </div>
 
-    <h2>Friends</h2>
     <div class="allFriends">
+      <h2>Friends</h2>
       <c:if test="${empty friends}"
       ><!--if theres no friend-->
       <div class="displayFriend">

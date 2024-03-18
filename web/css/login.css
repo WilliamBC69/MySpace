@@ -1,12 +1,10 @@
-@import url('access.css');
+@import url("access.css");
 
-.login,
-.register {
-  font-family: Helvetica;
-  width: 170px;
-  border: 1px;
-  border-radius: 5%;
-  background: linear-gradient(50deg, #14FFEC, #ff8000);
+
+
+.login:hover,
+register:hover {
+  background: #5c72e0;
 }
 
 .error {

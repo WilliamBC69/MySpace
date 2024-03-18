@@ -33,7 +33,17 @@
           <c:forEach var="post" items="${posts}"><!--print out all posts in the list-->
             <div class="post">
                 <p>${post.content}</p>
-                <h4>Posted on: ${post.date}</h4>
+                <div class="post-info">
+                  <a>Posted on: ${post.date}</a>
+                  <div class="like-info">
+                    <form action="Likes" method="post">
+                      <input type="hidden" name="location" value="inside">
+                      <input type="hidden" name="postID" value="${post.postID}">
+                      <input type="submit" value="Like" style="margin-right: 5px;">
+                    </form>
+                    <a class="likes">Likes: ${post.likes}</a>
+                  </div>
+                </div>
             </div>
             <br>
           </c:forEach>
@@ -41,5 +51,4 @@
       </div>
 </div>
   </body>
-
   </html>

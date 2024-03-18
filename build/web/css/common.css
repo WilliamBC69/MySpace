@@ -1,9 +1,0 @@
-body {
-  background-image: url("background.png");
-  background-size: 100%;
-}
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}

@@ -5,8 +5,7 @@
   width: 80%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
-  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .posting {
@@ -39,15 +38,13 @@
   background-color: #1e3c72;
 }
 
-.posts {
-  width: 80%;
-  margin: 0 auto;
-}
-
 .posts .post {
   padding: 10px;
+  width: 80%;
+  margin: 0 auto;
   margin-bottom: 10px;
   background-color: #f8f9fa;
+  border:2px solid black;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -64,4 +61,17 @@
 .posts .post p {
   margin: 0;
   line-height: 1.6;
+}
+
+.posts .post .post-info{
+  display: flex;
+  justify-content: space-between;
+  font-size: small;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.posts .post .post-info .like-info{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
