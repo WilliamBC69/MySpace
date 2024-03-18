@@ -1,7 +1,7 @@
 USE [MySpace]
 GO
 
-
+/****** Object:  Table [dbo].[Posts]    Script Date: 3/18/2024 20:03:06 ******/
 SET ANSI_NULLS ON
 GO
 
