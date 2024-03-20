@@ -45,7 +45,7 @@
   margin: 0 auto;
   margin-bottom: 10px;
   background-color: #f8f9fa;
-  border:2px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -64,15 +64,31 @@
   line-height: 1.6;
 }
 
-.posts .post .post-info{
+.posts .post .post-info {
   display: flex;
   justify-content: space-between;
   font-size: small;
   font-weight: bold;
   margin-top: 10px;
 }
-.posts .post .post-info .like-info{
+.posts .post .post-info .like-info {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.container {
+  width: 80%; /* Adjust as needed */
+  max-width: 800px; /* Adjust as needed */
+  margin: 50px auto; /* Center the container */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Adjust background color and opacity */
+  padding: 20px;
+  border-radius: 10px; /* Optional: Rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 600px; /* Limit maximum height of the container */
 }

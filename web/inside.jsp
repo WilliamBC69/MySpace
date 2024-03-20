@@ -26,28 +26,30 @@
             <input type="submit" value="Post" />
           </form>
         </div>
-        <div class="posts">
-          <c:if test="${empty posts}"><!--if theres no post-->
-            <h3>No posts to display.</h3>
-          </c:if>
-          <c:forEach var="post" items="${posts}"><!--print out all posts in the list-->
-            <div class="post">
-                <p>${post.content}</p>
-                <div class="post-info">
-                  <a>Posted on: ${post.date}</a>
-                  <div class="like-info">
-                    <form action="Likes" method="post">
-                      <input type="hidden" name="location" value="inside">
-                      <input type="hidden" name="friendname" value="${username}">
-                      <input type="hidden" name="postID" value="${post.postID}">
-                      <input type="submit" value="Like" style="margin-right: 5px;">
-                    </form>
-                    <a class="likes">Likes: ${post.likes}</a>
+        <div class="container">
+          <div class="posts">
+            <c:if test="${empty posts}"><!--if theres no post-->
+              <h3>No posts to display.</h3>
+            </c:if>
+            <c:forEach var="post" items="${posts}"><!--print out all posts in the list-->
+              <div class="post">
+                  <p>${post.content}</p>
+                  <div class="post-info">
+                    <a>Posted on: ${post.date}</a>
+                    <div class="like-info">
+                      <form action="Likes" method="post">
+                        <input type="hidden" name="location" value="inside">
+                        <input type="hidden" name="friendname" value="${username}">
+                        <input type="hidden" name="postID" value="${post.postID}">
+                        <input type="submit" value="Like" style="margin-right: 5px;">
+                      </form>
+                      <a class="likes">Likes: ${post.likes}</a>
+                    </div>
                   </div>
-                </div>
-            </div>
-            <br>
-          </c:forEach>
+              </div>
+              <br>
+            </c:forEach>
+          </div>
         </div>
       </div>
 </div>
