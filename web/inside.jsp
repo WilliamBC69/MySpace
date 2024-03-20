@@ -35,15 +35,15 @@
               <div class="post">
                   <p>${post.content}</p>
                   <div class="post-info">
-                    <a>Posted on: ${post.date}</a>
+                    <a class="post-date">Posted on: ${post.date}</a>
                     <div class="like-info">
                       <form action="Likes" method="post">
                         <input type="hidden" name="location" value="inside">
                         <input type="hidden" name="friendname" value="${username}">
                         <input type="hidden" name="postID" value="${post.postID}">
-                        <input type="submit" value="Like" style="margin-right: 5px;">
+                        <input type="image" src="./css/icon/like.png" style="margin-right: 5px;">
                       </form>
-                      <a class="likes">Likes: ${post.likes}</a>
+                      <a class="likes">${post.likes}</a>
                     </div>
                   </div>
               </div>

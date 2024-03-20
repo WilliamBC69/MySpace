@@ -9,14 +9,17 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   justify-content: space-between;
   align-items: center;
+  height: 100vh;
 }
 
 .displayNewFriend {
   width: 80%;
   margin:0 auto 20px auto;
-  padding: 20px;
+  padding: 30px;
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex; 
+  flex-direction: row;
   border-radius: 5px;
   justify-content: space-between;
   align-items: center;
@@ -31,31 +34,35 @@ h2 {
   line-height: 1.6;
 }
 
+.displayNewFriend form p {
+  margin-right: 10px; 
+}
+
 .displayNewFriend h3 {
   padding: 10px;
-  display: flex;
-  justify-content: center;
   margin-bottom: 10px;
-  background-color: #f8f9fa; /* Changed to match the top style */
+  background-color: #f8f9fa; 
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .displayNewFriend form {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .displayNewFriend input[type="submit"] {
   margin-left: 10px;
-  padding: 5px 10px; /* Adjusted padding to match the top style */
+  padding: 10px 15px; 
   background-color: #6a82fb;
   border: none;
+  float: right;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
 }
 
 .displayNewFriend input[type="submit"]:hover {
-  background-color: #5c72e0; /* Changed to match the top style */
+  background-color: #5c72e0;
 }

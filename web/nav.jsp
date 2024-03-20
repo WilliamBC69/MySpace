@@ -17,16 +17,19 @@
   </div>
 
   <div class="friend">
-    <form action="Friend" method="get" style="margin-right: 5px">
+    <form action="Friend" method="get" >
       <!--go to friend list-->
-      <input type="submit" value="Friend" />
+      <input type="image" src="./css/icon/friends.png" />
     </form>
   </div>
 
-  <div class="home">
-    <button onclick="window.location.href='Inside'" style="margin-right: 5px">
-      Homepage
-    </button>
-    <button onclick="window.location.href='index.jsp'">Logout</button>
-  </div>
+  <form action="Inside" method="get">
+    <input type="image" src="./css/icon/home.png">
+  </form>
+  
+  <form action="index.jsp" method="get">
+    <input type="image" src="./css/icon/logout.png">
+  </form>
+  
+
 </div>

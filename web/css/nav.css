@@ -11,21 +11,32 @@
 
 .nav input[type="text"] {
   padding: 10px;
+  margin-top: 9px;
   border: none;
   border-radius: 3px;
 }
 
-.nav input[type="submit"],
-.nav button {
+/* @keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+
+.nav input[type="image"] {
   padding: 10px;
   border: none;
   border-radius: 3px;
-  background-color: #028a88;
+  height: 35px;
   color: white;
   cursor: pointer;
 }
 
-.nav input[type="submit"]:hover,
-.nav button:hover {
-  background-color: #45a049;
+.nav input[type="image"]:hover {
+  background-color: rgb(49, 105, 63, 0.5);
 }

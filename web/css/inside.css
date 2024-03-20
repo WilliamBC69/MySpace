@@ -24,6 +24,7 @@
 
 .posting textarea {
   width: 50%;
+  height: 90%;
   padding: 10px;
   font-size: 16px;
   border-radius: 5px;
@@ -43,7 +44,7 @@
   border-radius: 5px;
 }
 
-.posting input[type="submit"]:hover {
+.posting input[type="image"]:hover {
   background-color: #1e3c72;
 }
 
@@ -75,15 +76,29 @@
 .posts .post .post-info {
   display: flex;
   justify-content: space-between;
-  font-size: small;
   font-weight: bold;
   margin-top: 10px;
 }
+
+.posts .post .post-info .post-date{
+  margin-top:15px;
+}
+
 .posts .post .post-info .like-info {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
+.posts .post .post-info .like-info .likes{
+  font-size: medium;
+  padding-top: 10px;
+}
+
+.posts .post .post-info .like-info input[type="image"] {
+  height: 35px;
+}
+
 .container {
   width: 80%;
   max-width: 800px;
@@ -93,5 +108,8 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 530px;
+}
+.container::-webkit-scrollbar {
+  width: 0;
 }
