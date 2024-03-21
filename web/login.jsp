@@ -29,7 +29,7 @@
       <input type="submit" name="action" class="choice1" value="Login">
     </form>
     <form action="register.jsp" method="post">
-      <a href="register.jsp" class="choice2">Don't have an account?</a>
+      <a style="color:rgb(81, 106, 147)" href="register.jsp" class="choice2">Don't have an account?</a>
     </form>
   </div>
   </body>

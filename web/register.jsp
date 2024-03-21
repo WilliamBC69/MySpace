@@ -38,7 +38,7 @@
         </c:choose>
         <input type="submit" class="choice1" value="Register" />
       </form>
-      <a href="index.jsp" class="choice2">Already have an account?</a>
+      <a style="color:rgb(81, 106, 147)" href="index.jsp" class="choice2">Already have an account?</a>
 <!--take user back to login page-->
     </div>
   </body>
