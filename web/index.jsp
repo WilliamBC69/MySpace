@@ -1,39 +1,15 @@
 <!DOCTYPE html>
-
-<html>
-  <head>
-    <title>Login</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/login.css?${currentTimeMillis}" />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-  </head>
-
-  <body>
-    <div class="loginForm">
-
-    <h1>Login</h1>
-
-    <form action="Login" method="post">
-      <input type="text" id="username" name="username" class="username" placeholder="Username" required />
-      <br><br>
-      <input type="password" id="password" name="password" class="password" placeholder="Password" required />
-      <c:if test="${not empty LoginError}">
-        <p class="error">${LoginError}</p>
-      </c:if>
-      <input type="submit" name="action" class="choice1" value="Login">
-    </form>
-
-    <br />
-    
-    <form action="register.jsp" method="post">
-      <input type="submit" name="action" class="choice2" value="Register" />
-    </form>
-  </div>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    window.onload = function() {
+        window.location.href = "login.jsp";
+    };
+</script>
+</body>
 </html>

@@ -37,6 +37,12 @@
                   <div class="post-info">
                     <a class="post-date">Posted on: ${post.date}</a>
                     <div class="like-info">
+                      <form action="DeletePost" method="post">
+                        <input type="hidden" name="location" value="inside">
+                        <input type="hidden" name="friendname" value="${username}">
+                        <input type="hidden" name="postID" value="${post.postID}">
+                        <input type="image" src="./css/icon/trash.png" style="margin-right: 5px;">
+                      </form>
                       <form action="Likes" method="post">
                         <input type="hidden" name="location" value="inside">
                         <input type="hidden" name="friendname" value="${username}">

@@ -13,7 +13,7 @@
     <div class="loginForm">
       <h1>Register</h1>
       
-      <form action="Register" method="post">
+      <form class="actualForm" action="Register" method="post">
         <!--try to register-->
         <input type="text" id="username" name="username" class="username" placeholder="Username" required />
         <br /><br />
@@ -30,7 +30,7 @@
               <p class="success">${RegisterSuccess}</p>
               <script>
                 setTimeout(function () {
-                  window.location.href = 'index.jsp';
+                  window.location.href = 'login.jsp';
                 }, 700); 
               </script>
             </c:if>
@@ -38,10 +38,8 @@
         </c:choose>
         <input type="submit" class="choice1" value="Register" />
       </form>
-
-      <br />
-      <button class="choice2" onclick="window.location.href='index.jsp'">
-        Go back</button><!--take user back to login page-->
+      <a href="index.jsp" class="choice2">Already have an account?</a>
+<!--take user back to login page-->
     </div>
   </body>
 

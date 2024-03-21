@@ -52,6 +52,10 @@
         <servlet-name>Likes</servlet-name>
         <servlet-class>Servlet.Likes</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeletePost</servlet-name>
+        <servlet-class>Servlet.DeletePost</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
@@ -103,5 +107,9 @@
     <servlet-mapping>
         <servlet-name>Likes</servlet-name>
         <url-pattern>/Likes</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeletePost</servlet-name>
+        <url-pattern>/DeletePost</url-pattern>
     </servlet-mapping>
 </web-app>

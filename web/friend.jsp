@@ -18,32 +18,34 @@
 
     <div class="allFriends">
       <h2>Friends</h2>
-      <c:if test="${empty friends}"
-      ><!--if theres no friend-->
-      <div class="displayFriend">
-      <h3>No friends to display.</h3>
-      </div>
-        </c:if>
-        <c:forEach var="friend" items="${friends}"
-        ><!--print out all friends in the list-->
+      <div class="container">
+        <c:if test="${empty friends}"
+        ><!--if theres no friend-->
         <div class="displayFriend">
-      
-          <a class="friendname">${friend.friendname}</a>
-          <div class="unfriend">
-            <form action="Unfriend" method="post" style="display: inline;">
-              <input type="hidden" name="friendname" value="${friend.friendname}"/>
-              <input type="submit" value="Unfriend"/>
-            </form>
-          </div>
-          <div class="viewfriend">
-            <form action="viewProfile" method="get" style="display:inline">
-              <input type="hidden" name="friendname" value="${friend.friendname}"/>
-              <input type="submit" value="View Profile"/>
-            </form>
-          </div>
+        <h3>No friends to display.</h3>
         </div>
-          <br><br>
-        </c:forEach>
+          </c:if>
+          <c:forEach var="friend" items="${friends}"
+          ><!--print out all friends in the list-->
+          <div class="displayFriend">
+        
+            <a class="friendname">${friend.friendname}</a>
+            <div class="unfriend">
+              <form action="Unfriend" method="post" style="display: inline;">
+                <input type="hidden" name="friendname" value="${friend.friendname}"/>
+                <input type="submit" value="Unfriend"/>
+              </form>
+            </div>
+            <div class="viewfriend">
+              <form action="viewProfile" method="get" style="display:inline">
+                <input type="hidden" name="friendname" value="${friend.friendname}"/>
+                <input type="submit" value="View Profile"/>
+              </form>
+            </div>
+          </div>
+            <br><br>
+          </c:forEach>
+      </div>
     </div>
     
   </body>

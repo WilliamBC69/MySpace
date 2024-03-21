@@ -19,19 +19,21 @@
       </div>
       <div class="displayNewFriendWrapper">
         <h2>New Friends</h2>
-        <c:if test="${empty newfriends}">
-          <!--if theres no friend-->
-          <h3>No potential friends.</h3>
-        </c:if>
-        <c:forEach var="newfriend" items="${newfriends}">
-          <div class="displayNewFriend">
-            <p>${newfriend.newfriendname}</p>
-            <form action="Addfriend" method="post">
-              <input type="hidden" name="friendname" value="${newfriend.newfriendname}" />
-              <input type="submit" value="Add Friend" />
-            </form>
-          </div>
-        </c:forEach>
+        <div class="container">
+          <c:if test="${empty newfriends}">
+            <!--if theres no friend-->
+            <h3>No potential friends.</h3>
+          </c:if>
+          <c:forEach var="newfriend" items="${newfriends}">
+            <div class="displayNewFriend">
+              <p>${newfriend.newfriendname}</p>
+              <form action="Addfriend" method="post">
+                <input type="hidden" name="friendname" value="${newfriend.newfriendname}" />
+                <input type="submit" value="Add Friend" />
+              </form>
+            </div>
+          </c:forEach>
+        </div>
       </div>
     </body>
 

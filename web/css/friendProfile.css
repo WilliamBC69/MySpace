@@ -15,8 +15,9 @@
 }
 
 .post {
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 2%;
+  width: 80%;
+  margin:0 auto 10px auto;
   background-color: rgba(255, 255, 255, 0.6);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -25,7 +26,6 @@
 .posts .post .post-info{
   display: flex;
   justify-content: space-between;
-  font-size: small;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -33,4 +33,28 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+.posts .post .post-info .like-info .likes{
+  font-size: medium;
+  padding-top: 10px;
+}
+.posts .post .post-info .like-info input[type="image"] {
+  height: 35px;
+}
+.posts .post .post-info .post-date{
+  margin-top:15px;
+}
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 530px;
+}
+.container::-webkit-scrollbar {
+  width: 0;
 }

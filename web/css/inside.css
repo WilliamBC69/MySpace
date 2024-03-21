@@ -51,10 +51,8 @@
 .posts .post {
   padding: 2%;
   width: 80%;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  margin:0 auto 10px auto;
   background-color: #f8f9fa;
-  border: 2px solid black;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -108,7 +106,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  max-height: 530px;
+  height: 530px;
 }
 .container::-webkit-scrollbar {
   width: 0;

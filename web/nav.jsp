@@ -27,7 +27,7 @@
     <input type="image" src="./css/icon/home.png">
   </form>
   
-  <form action="index.jsp" method="get">
+  <form action="login.jsp" method="get">
     <input type="image" src="./css/icon/logout.png">
   </form>
   

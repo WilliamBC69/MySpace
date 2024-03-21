@@ -11,14 +11,27 @@
   align-items: center;
   height: 100vh;
 }
-
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  height: 530px;
+}
+.container::-webkit-scrollbar {
+  width: 0;
+}
 .displayNewFriend {
   width: 80%;
-  margin:0 auto 20px auto;
+  margin: 0 auto 30px auto;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex; 
+  display: flex;
   flex-direction: row;
   border-radius: 5px;
   justify-content: space-between;
@@ -35,13 +48,13 @@ h2 {
 }
 
 .displayNewFriend form p {
-  margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .displayNewFriend h3 {
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #f8f9fa; 
+  background-color: #f8f9fa;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -54,11 +67,12 @@ h2 {
 
 .displayNewFriend input[type="submit"] {
   margin-left: 10px;
-  padding: 10px 15px; 
+  padding: 20px 30px;
+  font-size: 14px;
   background-color: #6a82fb;
   border: none;
   float: right;
-  border-radius: 5px;
+  border-radius: 15px;
   color: #fff;
   cursor: pointer;
 }
